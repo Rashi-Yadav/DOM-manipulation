@@ -63,3 +63,29 @@ evenfruitItem[i].style.backgroundColor = 'brown';
 evenfruitItem[i].style.color = 'white';
  }
 }
+
+//Creating Elements & DOM Relations
+function insertElements(){
+  // Create element, ex : h3
+  const sub = document.createElement('h3');
+  // Create textNode
+  const h3Text = document.createTextNode('Buy high quality organic fruits online');
+  // Append the textNode into <h3> element
+  sub.appendChild(h3Text);
+  sub.style.fontStyle = 'italic'; 
+  const divs = document.getElementsByTagName('div');
+  const firstDiv = divs[0]; 
+  const mainHeading = firstDiv.querySelector('h1'); 
+  firstDiv.insertBefore(sub, mainHeading.nextSibling); 
+
+  // Create element, ex : p
+  const sub2 = document.createElement('p');
+  sub2.id = 'fruits-total';
+  const paraText = document.createTextNode('Total fruits: 4');
+  sub2.appendChild(paraText);
+  // Select the element where want to insert
+  const secondDiv = divs[1]; 
+  const unorderedList = secondDiv.querySelector('ul'); 
+  //insertBefore() method inserts the element at specified space
+  secondDiv.insertBefore(sub2, unorderedList);
+}
